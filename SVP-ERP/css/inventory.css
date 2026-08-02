@@ -1,0 +1,21 @@
+.inventory-screen{
+
+width:100%;
+
+}
+
+
+
+.inventory-screen .dashboard-card{
+
+min-height:130px;
+
+}
+
+
+
+.inventory-screen table{
+
+margin-top:15px;
+
+}

@@ -1,0 +1,37 @@
+name: Build SVP ERP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: SVP-ERP/package.json
+
+      - name: Install dependencies
+        run: |
+          cd SVP-ERP
+          npm install
+
+      - name: Build application
+        run: |
+          cd SVP-ERP
+          npm run dist
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SVP-ERP-Installer-Windows
+          path: SVP-ERP/dist/*.exe

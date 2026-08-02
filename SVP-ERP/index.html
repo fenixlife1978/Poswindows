@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SVP ERP</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pos.css">
+<link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+<div id="login-container">
+<div class="login-box">
+<h1>
+SVP ERP
+</h1>
+<p>
+Sistema Administrativo Comercial
+</p>
+<input
+id="usuario"
+placeholder="Usuario"
+value="admin"
+>
+<input
+id="clave"
+type="password"
+placeholder="Contraseña"
+value="1234"
+>
+<button
+id="btnEntrar"
+class="btn-primary">
+Ingresar
+</button>
+</div>
+</div>
+
+<div id="erp-container"
+class="hidden">
+<aside class="sidebar">
+<div class="logo">
+<h2>
+SVP ERP
+</h2>
+<span>
+Venezuela
+</span>
+</div>
+
+<nav>
+<button data-route="dashboard">
+🏠 Dashboard
+</button>
+<button data-route="pos">
+🛒 Punto de Venta
+</button>
+<button data-route="productos">
+📦 Productos
+</button>
+<button data-route="inventario">
+📊 Inventario
+</button>
+<button data-route="clientes">
+👥 Clientes
+</button>
+<button data-route="proveedores">
+🏭 Proveedores
+</button>
+<button data-route="compras">
+📥 Compras
+</button>
+<button data-route="ventas">
+🧾 Ventas
+</button>
+<button data-route="caja">
+💰 Caja
+</button>
+<button data-route="reportes">
+📈 Reportes
+</button>
+<button data-route="usuarios">
+👤 Usuarios
+</button>
+<button data-route="configuracion">
+⚙️ Configuración
+</button>
+</nav>
+
+<button
+id="btnSalir"
+class="logout">
+Cerrar Sesión
+</button>
+</aside>
+
+<main class="main-area">
+<header class="topbar">
+<div>
+<span>
+Empresa:
+</span>
+<strong id="empresaActual">
+SVP ERP
+</strong>
+</div>
+<div>
+Usuario:
+<strong>
+Administrador
+</strong>
+</div>
+</header>
+
+<section id="content">
+</section>
+</main>
+
+<div id="modalContainer" class="modal-container hidden">
+</div>
+
+</div>
+
+<script src="database/seed.js"></script>
+<script src="js/database.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/router.js"></script>
+<script src="js/modules/dashboard/dashboard.js"></script>
+<script src="js/modules/pos/factura.js"></script>
+<script src="js/modules/pos/pos.js"></script>
+<script src="js/modules/pos/pagos.js"></script>
+<script src="js/modules/productos/productos.js"></script>
+<script src="js/modules/clientes/clientes.js"></script>
+<script src="js/modules/inventario/inventario.js"></script>
+<script src="js/modules/ventas/ventas.js"></script>
+<script src="js/modules/compras/compras.js"></script>
+<script src="js/modules/proveedores/proveedores.js"></script>
+<script src="js/modules/caja/caja.js"></script>
+<script src="js/modules/reportes/reportes.js"></script>
+<script src="js/modules/configuracion/configuracion.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/backup.js"></script>
+<script src="js/backup-auto.js"></script>
+<script src="js/modules/fiscal/fiscal.js"></script>
+<script src="js/modules/usuarios/usuarios.js"></script>
+<script src="js/modules/pos/barcode.js"></script>
+<script src="js/modules/pos/atajos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

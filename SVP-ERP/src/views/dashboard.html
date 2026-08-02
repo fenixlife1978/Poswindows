@@ -1,0 +1,55 @@
+<div class="panel h-full flex flex-col bg-[#EBE9ED] p-2 border-2 border-[#808080] shadow-inner overflow-hidden">
+  <div class="border-b-2 border-[#000080] mb-6 pb-2">
+    <h2 class="text-2xl font-black italic uppercase text-[#000080] leading-none">Dashboard General</h2>
+    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Resumen del negocio en tiempo real</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+    <div class="card p-4 flex flex-col items-center justify-center border-t-[#000080] border-t-4 shadow-md bg-white">
+      <span class="text-[10px] font-black uppercase text-gray-400 mb-2">Ventas de Hoy</span>
+      <strong id="ventasHoy" class="text-3xl font-black text-green-700 font-mono italic tracking-tighter">$0.00</strong>
+    </div>
+    <div class="card p-4 flex flex-col items-center justify-center border-t-blue-700 border-t-4 shadow-md bg-white">
+      <span class="text-[10px] font-black uppercase text-gray-400 mb-2">Productos</span>
+      <strong id="totalProductos" class="text-3xl font-black text-blue-900 font-mono italic tracking-tighter">0</strong>
+    </div>
+    <div class="card p-4 flex flex-col items-center justify-center border-t-amber-500 border-t-4 shadow-md bg-white">
+      <span class="text-[10px] font-black uppercase text-gray-400 mb-2">Clientes</span>
+      <strong id="totalClientes" class="text-3xl font-black text-amber-700 font-mono italic tracking-tighter">0</strong>
+    </div>
+    <div class="card p-4 flex flex-col items-center justify-center border-t-red-600 border-t-4 shadow-md bg-white">
+      <span class="text-[10px] font-black uppercase text-gray-400 mb-2">Stock Bajo</span>
+      <strong id="alertasStock" class="text-3xl font-black text-red-600 font-mono italic tracking-tighter">0</strong>
+    </div>
+  </div>
+
+  <div class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 overflow-hidden">
+    <div class="flex flex-col overflow-hidden bg-white border border-[#808080] shadow-inner">
+      <div class="bg-[#455a64] text-white p-2 text-[10px] font-black uppercase italic">Últimas Ventas Realizadas</div>
+      <div class="flex-1 overflow-auto">
+        <table class="win-table">
+          <thead>
+            <tr><th>Referencia</th><th>Cliente</th><th>Total</th></tr>
+          </thead>
+          <tbody id="listaRecientes" class="text-[10px] uppercase font-bold text-blue-900">
+            <tr><td colspan="3" class="py-10 text-center text-gray-300 italic">No hay registros hoy...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="flex flex-col overflow-hidden bg-white border border-[#808080] shadow-inner">
+      <div class="bg-[#b91c1c] text-white p-2 text-[10px] font-black uppercase italic">Alertas de Inventario Crítico</div>
+      <div class="flex-1 overflow-auto">
+        <table class="win-table">
+          <thead>
+            <tr><th>Producto</th><th>Mínimo</th><th>Existencia</th></tr>
+          </thead>
+          <tbody id="listaAlertas" class="text-[10px] uppercase font-bold text-red-600">
+            <tr><td colspan="3" class="py-10 text-center text-gray-300 italic">Inventario saludable...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

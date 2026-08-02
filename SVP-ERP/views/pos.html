@@ -1,0 +1,261 @@
+<div class="pos-screen">
+
+
+<div class="pos-header">
+
+<div>
+
+<h2>
+Punto de Venta
+</h2>
+
+<span id="usuarioCaja">
+Caja Principal
+</span>
+
+</div>
+
+
+<div>
+
+<button class="btn btn-warning">
+Suspender Venta
+</button>
+
+<button class="btn btn-danger">
+Cerrar Caja
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="pos-body">
+
+
+<!-- PANEL PRODUCTOS -->
+
+
+<section class="pos-left">
+
+
+<div class="search-box">
+
+
+<input 
+id="buscarProductoPOS"
+placeholder="Buscar producto o código..."
+>
+
+
+<button>
+🔍
+</button>
+
+
+</div>
+
+
+
+
+<div id="categoriasPOS"
+class="categories">
+
+
+<button>
+Todos
+</button>
+
+</div>
+
+
+
+
+<div id="listaProductosPOS"
+class="product-grid">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- FACTURA -->
+
+
+<section class="pos-right">
+
+
+<div class="ticket-header">
+
+
+<h3>
+Venta Actual
+</h3>
+
+
+<div>
+Cliente:
+<span id="clienteActual">
+Consumidor Final
+</span>
+</div>
+
+
+</div>
+
+
+
+
+
+<div id="ticketItems"
+class="ticket-list">
+
+
+</div>
+
+
+
+
+
+
+<div class="summary">
+
+
+<div>
+
+Subtotal
+
+<span id="subtotalPOS">
+$0.00
+</span>
+
+</div>
+
+
+<div>
+
+IVA
+
+<span id="ivaPOS">
+$0.00
+</span>
+
+</div>
+
+
+<hr>
+
+
+<div class="grand-total">
+
+TOTAL
+
+<span id="totalPOS">
+$0.00
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="payment-panel">
+
+
+<button 
+class="payment active"
+onclick="seleccionarPago('Efectivo')">
+
+💵 Efectivo
+
+</button>
+
+
+<button 
+class="payment"
+onclick="seleccionarPago('Pago Móvil')">
+
+📱 Pago Móvil
+
+</button>
+
+
+<button 
+class="payment"
+onclick="seleccionarPago('Tarjeta')">
+
+💳 Tarjeta
+
+</button>
+
+
+<button 
+class="payment"
+onclick="seleccionarPago('Bolívares')">
+
+🇻🇪 Bs
+
+</button>
+
+
+
+<input 
+id="montoPago"
+placeholder="Monto recibido"
+>
+
+
+
+<div class="change">
+
+Cambio:
+
+<strong id="cambioPOS">
+$0.00
+</strong>
+
+
+</div>
+
+
+
+
+<button class="checkout" onclick="cobrarVenta()">
+
+COBRAR VENTA
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+</div>
+
+
+
+</div>

@@ -1,0 +1,74 @@
+/* Estilos de Punto de Venta - Estética Industrial Win32 */
+
+.pos-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 15px; /* Reducido para mayor densidad */
+  height: calc(100vh - 130px);
+}
+
+.productos-pos,
+.ticket-pos {
+  background: white;
+  padding: 15px;
+  border: 1px solid #808080;
+  box-shadow: inset 1px 1px #ffffff, 1px 1px #404040;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-pos {
+  overflow: hidden;
+}
+
+.ticket-pos table {
+  flex: 1;
+  overflow-y: auto;
+  display: block;
+}
+
+#totalPOS {
+  font-size: 32px; /* Aumentado para visibilidad */
+  font-weight: 900;
+  color: #008000; /* Verde industrial */
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  text-align: right;
+  display: block;
+}
+
+#totalBS {
+  font-size: 18px;
+  margin-top: 2px;
+  text-align: right;
+  color: #404040;
+  font-weight: bold;
+}
+
+.totales-pos {
+  background: #f0f0f0;
+  border-top: 2px double #808080;
+  padding: 10px;
+  margin-top: auto;
+}
+
+.pos-container h2 {
+  color: #000080;
+  text-transform: uppercase;
+  font-style: italic;
+  border-bottom: 2px solid #000080;
+  margin-bottom: 10px;
+}
+
+input#buscarProductoPOS {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid #455a64;
+}
+
+select#metodoPago {
+  font-weight: bold;
+  color: #000080;
+}

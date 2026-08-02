@@ -1,0 +1,11 @@
+.reports-screen{
+  width:100%;
+}
+
+.reports-screen .dashboard-card{
+  min-height:130px;
+}
+
+.reports-screen table{
+  margin-top:15px;
+}

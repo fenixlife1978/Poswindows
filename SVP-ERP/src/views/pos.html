@@ -1,0 +1,163 @@
+<div class="pos-screen h-full flex flex-col bg-[#EBE9ED] p-1 overflow-hidden select-none">
+  <!-- Cabecera Operativa (Toolbar Estilo Win32) -->
+  <div class="flex gap-[2px] mb-2 shrink-0">
+    <button onclick="limpiarPOS()" class="win-tool-btn">
+      <span class="text-blue-700 text-xl font-black">📄</span>
+      <span>F2 - Nueva Venta</span>
+    </button>
+    <button onclick="document.getElementById('buscarProductoPOS').focus()" class="win-tool-btn">
+      <span class="text-gray-700 text-xl">🔍</span>
+      <span>F3 - Buscar</span>
+    </button>
+    <button onclick="abrirModalCliente()" class="win-tool-btn">
+      <span class="text-blue-500 text-xl">👤</span>
+      <span>F4 - Cliente</span>
+    </button>
+    <div class="flex-1"></div>
+    <button onclick="cargarVista('dashboard')" class="win-tool-btn">
+      <span class="text-red-700 text-xl">🚪</span>
+      <span>F12 - Salir</span>
+    </button>
+  </div>
+
+  <!-- Área de Datos de Cliente y Totales Superiores -->
+  <div class="grid grid-cols-12 gap-2 mb-2 shrink-0">
+    <div class="col-span-8">
+      <fieldset class="h-full">
+        <legend>Datos del Cliente (F4)</legend>
+        <div class="grid grid-cols-12 gap-x-4 gap-y-1.5 mt-1">
+          <div class="col-span-12 flex items-center gap-2">
+            <span class="text-[11px] font-bold w-14 text-right">Cliente:</span>
+            <div id="clientePOS" class="flex-1 h-6 flex items-center px-2 bg-white border border-gray-400 text-xs font-black uppercase italic text-blue-900 shadow-inner">
+              Consumidor final
+            </div>
+          </div>
+          <div class="col-span-12 flex items-center gap-2">
+            <span class="text-[11px] font-bold w-14 text-right">Buscar:</span>
+            <input 
+              id="buscarProductoPOS" 
+              placeholder="CÓDIGO O NOMBRE DEL PRODUCTO..." 
+              class="flex-1 h-7 border-2 border-[#455a64] px-2 font-black text-sm uppercase focus:bg-[#FFFACD]"
+              oninput="if(typeof buscarProductoPOS === 'function') buscarProductoPOS(this.value)"
+            >
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- Caja de Totales Gigante Estilo Industrial -->
+    <div class="col-span-4">
+      <div class="bg-white border-2 border-[#808080] p-3 h-full flex flex-col justify-center shadow-inner relative overflow-hidden">
+        <div class="flex justify-between items-baseline border-b border-gray-200 mb-1 pb-1">
+          <span class="text-xs font-black text-blue-900 uppercase italic">I.V.A. (16%):</span>
+          <span id="ivaPOS" class="text-xl font-bold text-blue-900 font-mono tabular-nums">$0.00</span>
+        </div>
+        <div class="flex justify-between items-baseline">
+          <span class="text-sm font-black text-black uppercase tracking-tighter">TOTAL A PAGAR:</span>
+          <span id="totalPOS" class="text-4xl font-black text-[#008000] font-mono tracking-tighter italic tabular-nums">$0.00</span>
+        </div>
+        <div id="totalBS" class="text-right text-[10px] font-bold text-gray-500 font-mono mt-1">
+          Ref. Bs 0.00
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rejilla de Selección y Detalle -->
+  <div class="flex-1 grid grid-cols-12 gap-2 overflow-hidden mb-2">
+    <!-- Tabla de Resultados de Búsqueda -->
+    <div class="col-span-4 flex flex-col overflow-hidden">
+      <fieldset class="flex-1 flex flex-col overflow-hidden bg-[#D4D0C8]/20">
+        <legend>Productos Disponibles</legend>
+        <div class="flex-1 overflow-auto bg-white border border-[#808080] shadow-inner">
+          <table class="win-table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th class="w-20">Precio</th>
+                <th class="w-16">Stock</th>
+                <th class="w-12">Add</th>
+              </tr>
+            </thead>
+            <tbody id="resultadoProductosPOS" class="font-mono text-[10px] uppercase">
+              <!-- Inyectado dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- Tabla del Ticket (Venta Actual) -->
+    <div class="col-span-8 flex flex-col overflow-hidden">
+      <fieldset class="flex-1 flex flex-col overflow-hidden bg-white">
+        <legend>Detalle de la Factura</legend>
+        <div class="flex-1 overflow-auto border border-[#808080] shadow-inner">
+          <table class="win-table">
+            <thead class="bg-[#D4D0C8] sticky top-0">
+              <tr>
+                <th>Descripción del Item</th>
+                <th class="w-16">Cant.</th>
+                <th class="w-24 text-right">Precio Unit.</th>
+                <th class="w-24 text-right">Total USD</th>
+              </tr>
+            </thead>
+            <tbody id="ticketPOS" class="font-mono text-[10px] uppercase">
+              <!-- Inyectado dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Sub-totales inferiores -->
+        <div class="bg-[#F0F0F0] border-t border-[#808080] p-2 flex justify-end gap-10 text-[11px] font-bold">
+           <div>SUB-TOTAL: <span id="subtotalPOS" class="font-mono text-blue-900">$0.00</span></div>
+           <div class="text-red-700">DESCUENTO: <span id="descuentoPOS" class="font-mono">0%</span></div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <!-- Panel Inferior de Cobro -->
+  <div class="grid grid-cols-12 gap-2 shrink-0 bg-[#D4D0C8] p-2 border border-[#808080] shadow-inner">
+    <div class="col-span-3">
+      <label class="text-[10px] font-black uppercase text-[#404040] mb-1 block">Forma de Pago:</label>
+      <select id="metodoPago" class="w-full h-8 font-bold text-blue-900 uppercase">
+        <option>Efectivo</option>
+        <option>Pago móvil</option>
+        <option>Tarjeta</option>
+        <option>Divisas</option>
+      </select>
+    </div>
+    
+    <div class="col-span-3">
+      <label class="text-[10px] font-black uppercase text-[#404040] mb-1 block">Monto Recibido:</label>
+      <input 
+        id="montoRecibido" 
+        type="number" 
+        step="0.01"
+        class="w-full h-8 font-mono font-black text-lg text-green-700 px-2"
+        placeholder="0.00"
+        oninput="if(typeof calcularVuelto === 'function') calcularVuelto(window.totalActualPOS || 0)"
+      >
+    </div>
+
+    <div class="col-span-2 flex flex-col justify-center items-center border-x border-[#808080]">
+      <span class="text-[9px] font-black uppercase text-gray-500">Cambio/Vuelto:</span>
+      <span id="vueltoPOS" class="text-xl font-black text-red-600 font-mono italic">$0.00</span>
+    </div>
+
+    <div class="col-span-4 flex gap-1">
+      <button 
+        onclick="finalizarVentaCompleta()" 
+        class="flex-1 bg-[#16a34a] border-t border-l border-white border-b-2 border-r-2 border-b-black border-r-black text-white font-black uppercase italic text-sm hover:bg-green-600 active:bg-green-800 transition-none"
+      >
+        [F9] COBRAR
+      </button>
+      <button 
+        onclick="limpiarPOS()" 
+        class="w-24 bg-white border-t border-l border-white border-b-2 border-r-2 border-b-[#808080] border-r-[#808080] text-red-700 font-black uppercase text-[10px] hover:bg-red-50 transition-none"
+      >
+        CANCELAR
+      </button>
+    </div>
+  </div>
+</div>

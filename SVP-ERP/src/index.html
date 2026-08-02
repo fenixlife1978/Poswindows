@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVP ERP - Desktop Enterprise Edition</title>
+  <!-- CSS Core -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <!-- CSS Módulos -->
+  <link rel="stylesheet" href="css/pos.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/reportes.css">
+</head>
+<body class="bg-[#D4D0C8]">
+  <div id="app" class="flex h-screen w-screen overflow-hidden">
+    <!-- El menú lateral se carga dinámicamente aquí -->
+    <aside id="menu" class="h-full border-r-2 border-black"></aside>
+    
+    <!-- El contenido de las vistas se carga aquí -->
+    <main id="contenido" class="flex-1 overflow-auto bg-[#D4D0C8] p-2 relative"></main>
+  </div>
+
+  <!-- SCRIPTS CORE (Orden de dependencia crítico) -->
+  <script src="js/database.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/permisos.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/logger.js"></script>
+  <script src="js/seguridad.js"></script>
+  
+  <!-- HELPERS -->
+  <script src="js/helpers/moneda.js"></script>
+  <script src="js/helpers/impuestos.js"></script>
+
+  <!-- MÓDULOS (Cargados globalmente para disponibilidad del Router) -->
+  <script src="js/modules/dashboard/dashboard.js"></script>
+  <script src="js/modules/pos/pos.js"></script>
+  <script src="js/modules/pos/busqueda.js"></script>
+  <script src="js/modules/pos/agregar.js"></script>
+  <script src="js/modules/pos/pagos.js"></script>
+  <script src="js/modules/pos/finalizarVenta.js"></script>
+  <script src="js/modules/productos/productos.js"></script>
+  <script src="js/modules/productos/modalProductos.js"></script>
+  <script src="js/modules/productos/categorias.js"></script>
+  <script src="js/modules/clientes/clientes.js"></script>
+  <script src="js/modules/clientes/modalClientes.js"></script>
+  <script src="js/modules/inventario/inventario.js"></script>
+  <script src="js/modules/ventas/ventas.js"></script>
+  <script src="js/modules/ventas/factura.js"></script>
+  <script src="js/modules/caja/caja.js"></script>
+  <script src="js/modules/reportes/reportes.js"></script>
+  <script src="js/modules/configuracion/configuracion.js"></script>
+  <script src="js/modules/configuracion/usuarios.js"></script>
+
+  <!-- CONTROLADOR DE ARRANQUE -->
+  <script src="js/app.js"></script>
+</body>
+</html>

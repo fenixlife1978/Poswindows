@@ -1,0 +1,91 @@
+<div class="panel h-full flex flex-col bg-[#EBE9ED] p-2 border-2 border-[#808080] shadow-inner overflow-hidden">
+  <!-- Cabecera de Módulo -->
+  <div class="border-b-2 border-[#000080] mb-4 pb-1 flex justify-between items-end">
+    <div>
+      <h2 class="text-xl font-black italic uppercase text-[#000080] leading-none">Inventario</h2>
+      <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-1">Existencias y Valorización de Mercancía</p>
+    </div>
+    
+    <!-- Card de Valor Inventario Estilo Industrial -->
+    <div class="card bg-white border-2 border-[#808080] px-4 py-1 shadow-inner text-right min-w-[200px]">
+      <span class="text-[9px] font-black uppercase text-gray-400 block">Valor Total del Inventario</span>
+      <span id="valorInventario" class="text-2xl font-black text-blue-900 font-mono italic tabular-nums">$0.00</span>
+    </div>
+  </div>
+
+  <!-- Barra de Herramientas Operativa -->
+  <div class="flex gap-1 mb-4">
+    <button onclick="entradaMercancia()" class="win-tool-btn !h-10 !min-w-[140px] !flex-row !gap-2 hover:bg-white active:bg-gray-200">
+      <span class="text-green-700 text-sm">▲</span>
+      <span class="text-[9px] font-black italic">F2 - Entrada Mercancía</span>
+    </button>
+    <button onclick="salidaMercancia()" class="win-tool-btn !h-10 !min-w-[140px] !flex-row !gap-2 hover:bg-white active:bg-gray-200">
+      <span class="text-red-700 text-sm">▼</span>
+      <span class="text-[9px] font-black italic">F3 - Salida Mercancía</span>
+    </button>
+  </div>
+
+  <!-- Rejilla de Reporte de Alta Densidad -->
+  <div class="flex-1 flex flex-col gap-4 overflow-hidden">
+    
+    <!-- Tabla de Existencia Actual -->
+    <div class="flex-[3] flex flex-col overflow-hidden">
+      <div class="bg-[#D4D0C8] border-x border-t border-[#808080] px-2 py-0.5 flex justify-between items-center">
+        <span class="text-[10px] font-black uppercase text-[#000080]">● Existencia Actual por Producto</span>
+      </div>
+      <div class="flex-1 overflow-auto border-2 border-[#808080] bg-white shadow-inner">
+        <table class="win-table">
+          <thead>
+            <tr>
+              <th class="w-32">Código</th>
+              <th>Producto</th>
+              <th class="w-24">Cantidad</th>
+              <th class="w-32">Costo</th>
+              <th class="w-32">Valor</th>
+            </tr>
+          </thead>
+          <tbody id="tablaInventario" class="font-mono text-[10px] uppercase">
+            <!-- Las filas se inyectan dinámicamente -->
+            <tr>
+              <td colspan="5" class="py-10 text-center text-gray-400 italic font-black uppercase tracking-tighter">
+                Cargando registros del almacén...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tabla de Últimos Movimientos -->
+    <div class="flex-[2] flex flex-col overflow-hidden">
+      <div class="bg-[#D4D0C8] border-x border-t border-[#808080] px-2 py-0.5 flex justify-between items-center">
+        <h3 class="text-[10px] font-black uppercase text-[#000080]">Últimos movimientos</h3>
+      </div>
+      <div class="flex-1 overflow-auto border-2 border-[#808080] bg-white shadow-inner">
+        <table class="win-table">
+          <thead>
+            <tr>
+              <th class="w-32">Fecha</th>
+              <th>Producto</th>
+              <th class="w-32">Tipo</th>
+              <th class="w-24">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody id="tablaMovimientos" class="font-mono text-[10px] uppercase text-blue-900 italic">
+            <!-- Las filas se inyectan dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Barra de Estado Inferior del Módulo -->
+  <div class="mt-2 bg-[#D4D0C8] border border-[#808080] p-1 flex justify-between items-center text-[9px] font-black uppercase text-[#404040]">
+    <div class="flex gap-4">
+      <span>Total Productos: <span id="totalProductosInv" class="text-blue-800">0</span></span>
+      <span>Stock Bajo: <span id="stockBajoInv" class="text-red-800">0</span></span>
+    </div>
+    <div class="italic">SVP ERP v2.0 - Reporte de Auditoría de Stock</div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+
+<div class="panel h-full flex flex-col bg-[#EBE9ED] p-2 border-2 border-[#808080] shadow-inner overflow-hidden">
+  <div class="border-b-2 border-[#000080] mb-4 pb-1 flex justify-between items-end">
+    <div>
+      <h2 class="text-xl font-black italic uppercase text-[#000080] leading-none">Transferencias</h2>
+      <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-1">Movimiento de Mercancía entre Almacenes</p>
+    </div>
+    
+    <button onclick="nuevaTransferencia()" class="win-tool-btn !h-10 !min-w-[160px] !flex-row !gap-2 hover:bg-white active:bg-gray-200">
+      <span class="text-blue-700 text-sm">🚚</span>
+      <span class="text-[9px] font-black italic">F2 - Nueva Transferencia</span>
+    </button>
+  </div>
+
+  <div class="flex-1 overflow-hidden border-2 border-[#808080] bg-white shadow-inner relative">
+    <table class="win-table">
+      <thead>
+        <tr>
+          <th class="w-24">Nº Ref</th>
+          <th class="w-32">Fecha</th>
+          <th>Sucursal Origen</th>
+          <th>Sucursal Destino</th>
+          <th class="w-24">Estado</th>
+          <th class="w-20">Acción</th>
+        </tr>
+      </thead>
+      <tbody id="tablaTransferencias" class="font-mono text-[10px] uppercase">
+        <tr>
+          <td colspan="6" class="py-10 text-center text-gray-400 italic">Cargando bitácora de movimientos...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-2 bg-[#D4D0C8] border border-[#808080] p-1 text-[9px] font-black uppercase text-[#404040] italic">
+    SVP ERP v2.0 - Control Logístico Multi-sucursal
+  </div>
+</div>

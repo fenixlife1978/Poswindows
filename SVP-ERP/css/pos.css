@@ -1,0 +1,172 @@
+.pos-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pos-header {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pos-body {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 20px;
+  height: calc(100vh - 170px);
+}
+
+.pos-left {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  overflow: auto;
+}
+
+.search-box {
+  display: flex; gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 17px;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.categories button {
+  background: #e5e7eb;
+  color: #111;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.product-card:hover {
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.pos-right {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-list {
+  flex: 1;
+  overflow: auto;
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.summary {
+  font-size: 18px;
+  border-top: 2px solid #eee;
+  padding-top: 15px;
+}
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.grand-total {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.payment-panel {
+  margin-top: 15px;
+}
+
+.payment {
+  background: #f3f4f6;
+  color: #111;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.payment.active {
+  background: #2563eb;
+  color: white;
+}
+
+.payment-panel input {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+.change {
+  padding: 15px 0;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout {
+  width: 100%;
+  padding: 18px;
+  background: #16a34a;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.checkout:hover {
+  background: #15803d;
+}
+
+@media (max-width: 1000px) {
+  .pos-body {
+    grid-template-columns: 1fr;
+  }
+}

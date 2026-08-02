@@ -1,0 +1,78 @@
+<div class="menu-container h-full flex flex-col bg-[#111827] p-3 shadow-2xl">
+  <div class="text-center py-4">
+    <h2 class="text-2xl font-black italic text-[#38bdf8] tracking-tighter leading-none">SVP ERP</h2>
+    <span class="text-[8px] font-bold text-gray-500 uppercase tracking-widest">Enterprise v2.0</span>
+  </div>
+  
+  <div class="usuario-menu bg-white/5 p-2 rounded-sm border border-white/10 mb-6 mt-2">
+    <span class="text-[8px] font-black uppercase text-blue-300/50 block">Sesión Activa:</span>
+    <strong id="nombreUsuario" class="text-[10px] text-white uppercase block truncate">Cargando...</strong>
+  </div>
+
+  <nav class="flex-1 space-y-0.5 overflow-y-auto pr-1">
+    <button onclick="cargarVista('dashboard')" class="nav-btn">
+      <span class="text-sm">🏠</span> <span>Dashboard</span>
+    </button>
+    <button onclick="cargarVista('pos')" class="nav-btn">
+      <span class="text-sm">🛒</span> <span>Punto de Venta</span>
+    </button>
+    <button onclick="cargarVista('productos')" class="nav-btn">
+      <span class="text-sm">📦</span> <span>Catálogo</span>
+    </button>
+    <button onclick="cargarVista('inventario')" class="nav-btn">
+      <span class="text-sm">📊</span> <span>Almacén</span>
+    </button>
+    <button onclick="cargarVista('clientes')" class="nav-btn">
+      <span class="text-sm">👥</span> <span>Clientes</span>
+    </button>
+    <button onclick="cargarVista('ventas')" class="nav-btn">
+      <span class="text-sm">🧾</span> <span>Historial</span>
+    </button>
+    <button onclick="cargarVista('caja')" class="nav-btn">
+      <span class="text-sm">💰</span> <span>Caja</span>
+    </button>
+    <button onclick="cargarVista('reportes')" class="nav-btn">
+      <span class="text-sm">📈</span> <span>Reportes</span>
+    </button>
+    <div class="pt-4 pb-2 text-[8px] font-black text-gray-600 uppercase border-t border-white/5 mt-4">Sistema</div>
+    <button onclick="cargarVista('configuracion')" class="nav-btn">
+      <span class="text-sm">⚙️</span> <span>Ajustes</span>
+    </button>
+  </nav>
+
+  <div class="mt-auto pt-4 border-t border-white/10">
+    <button onclick="logout()" class="w-full bg-red-950/30 hover:bg-red-900/50 text-red-400 text-[10px] font-bold p-2 flex items-center justify-center gap-2 border border-red-900/50 transition-all active:scale-[0.98]">
+      <span>🚪</span> CERRAR SISTEMA
+    </button>
+  </div>
+</div>
+
+<style>
+  .nav-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    padding: 10px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.1s;
+    border-radius: 2px;
+  }
+  .nav-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    padding-left: 15px;
+  }
+  .nav-btn.active {
+    background: #2563eb;
+    color: white;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  }
+</style>

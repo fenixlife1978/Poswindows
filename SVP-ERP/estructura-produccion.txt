@@ -1,0 +1,43 @@
+SVP ERP DESKTOP
+
+Sistema:
+Electron + SQLite
+
+
+Módulos:
+
+✓ Login usuarios
+✓ Dashboard
+✓ POS
+✓ Ventas
+✓ Compras
+✓ Inventario
+✓ Clientes
+✓ Proveedores
+✓ Caja
+✓ Reportes
+✓ Configuración
+✓ Facturación
+✓ Backup
+
+
+Base de datos:
+
+SQLite local
+
+
+Moneda:
+
+Principal:
+USD
+
+Secundaria:
+Bs
+
+Tasa:
+BCV editable
+
+
+Instalación:
+
+Windows .exe

@@ -1,0 +1,64 @@
+<div class="panel h-full flex flex-col bg-[#EBE9ED] p-2 border-2 border-[#808080] shadow-inner">
+  <!-- Cabecera de Módulo -->
+  <div class="border-b-2 border-[#000080] mb-4 pb-1 flex justify-between items-end">
+    <div>
+      <h2 class="text-xl font-black italic uppercase text-[#000080] leading-none">Gestión de Compras</h2>
+      <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-1">Entrada de Mercancía y Cuentas por Pagar</p>
+    </div>
+    
+    <!-- Barra de Herramientas Operativa -->
+    <div class="flex gap-1 mb-1">
+      <button onclick="registrarCompra()" class="win-tool-btn !h-10 !min-w-[140px] !flex-row !gap-2 hover:bg-white active:bg-gray-200">
+        <span class="text-blue-700 text-sm">📥</span>
+        <span class="text-[9px] font-black italic">F2 - Nueva Compra</span>
+      </button>
+      <button onclick="crearCuentaProveedor()" class="win-tool-btn !h-10 !min-w-[140px] !flex-row !gap-2 hover:bg-white active:bg-gray-200">
+        <span class="text-amber-700 text-sm">💳</span>
+        <span class="text-[9px] font-black italic">F4 - Compra a Crédito</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Área de Búsqueda y Filtros -->
+  <fieldset class="mb-4 bg-[#D4D0C8]/30">
+    <legend>Auditoría de Documentos</legend>
+    <div class="flex items-center gap-4 py-1">
+      <div class="flex items-center gap-2 flex-1">
+        <label class="text-[10px] font-black uppercase text-[#404040]">Buscar:</label>
+        <input id="buscarCompra" class="flex-1 h-6 border border-gray-400 px-2 text-xs font-bold uppercase focus:bg-[#FFFACD]" placeholder="BUSCAR POR PROVEEDOR, NÚMERO DE FACTURA O FECHA...">
+      </div>
+      <button class="h-6 px-4 bg-[#EBE9ED] border border-gray-500 text-[9px] font-black uppercase shadow-sm hover:bg-white" onclick="cargarCompras()">Actualizar</button>
+    </div>
+  </fieldset>
+
+  <!-- Tabla de Datos Principal -->
+  <div class="flex-1 overflow-hidden border-2 border-[#808080] bg-white shadow-inner relative">
+    <table class="win-table">
+      <thead class="bg-[#D4D0C8] sticky top-0 z-10">
+        <tr>
+          <th class="border-r border-[#808080]">Proveedor</th>
+          <th class="w-32 border-r border-[#808080]">Total</th>
+          <th class="w-32 border-r border-[#808080]">Estado</th>
+          <th class="w-48">Fecha</th>
+        </tr>
+      </thead>
+      <tbody id="tablaCompras" class="font-mono text-[10px] uppercase text-center">
+        <!-- Las filas se inyectan dinámicamente -->
+        <tr class="hover:bg-blue-50 cursor-pointer">
+          <td colspan="4" class="py-20 text-center text-gray-400 italic font-black uppercase tracking-tighter">
+            No se han registrado facturas de compra recientemente...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Barra de Estado Inferior del Módulo -->
+  <div class="mt-2 bg-[#D4D0C8] border border-[#808080] p-1 flex justify-between items-center text-[9px] font-black uppercase text-[#404040]">
+    <div class="flex gap-4">
+      <span>Total Compras Mes: <span id="countCompras" class="text-blue-800">0</span></span>
+      <span>Cuentas por Pagar: <span id="totalDeudaProveedores" class="text-red-800">$0.00</span></span>
+    </div>
+    <div class="italic">SVP ERP v2.0 - Módulo de Compras e Importaciones</div>
+  </div>
+</div>

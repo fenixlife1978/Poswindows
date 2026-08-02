@@ -1,0 +1,48 @@
+{
+  "name": "svp-erp",
+  "version": "1.0.0",
+  "description": "Sistema ERP POS Comercial Venezuela - Enterprise Edition",
+  "author": "SVP Professional <soporte@svp-erp.com>",
+  "main": "electron.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "better-sqlite3": "latest"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "com.svp.erp",
+    "productName": "SVP ERP Desktop",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/electron/dist/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "SVP ERP"
+    }
+  }
+}

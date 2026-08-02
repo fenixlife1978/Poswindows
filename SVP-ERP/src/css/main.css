@@ -1,0 +1,103 @@
+
+/* SVP ERP - Global Reset & Win32 Standard */
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #D4D0C8; /* Fondo clásico Windows */
+  color: #000;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  user-select: none;
+}
+
+#app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* Scrollbars Industriales */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #D4D0C8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EBE9ED;
+  border: 1px solid #FFF;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #DFDFDF;
+}
+
+::-webkit-scrollbar-button {
+  background: #EBE9ED;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #FFF;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #DFDFDF;
+}
+
+/* Utilidades de Texto */
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.font-mono { font-family: 'Courier New', Courier, monospace; }
+.uppercase { text-transform: uppercase; }
+.italic { font-style: italic; }
+.font-black { font-weight: 900; }
+.hidden { display: none !important; }
+
+/* Grid de Tablas Win32 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th {
+  background: #EBE9ED;
+  border: 1px solid #808080;
+  border-top-color: #FFF;
+  border-left-color: #FFF;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #404040;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+td {
+  border: 1px solid #D4D0C8;
+  padding: 4px 8px;
+  font-size: 11px;
+  height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+tr:nth-child(even) {
+  background: #F9F9F9;
+}
+
+tr:hover {
+  background: #E1F5FE;
+}
+
+tr.selected {
+  background: #000080 !important;
+  color: white !important;
+}

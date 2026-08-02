@@ -1,0 +1,39 @@
+<div class="config-screen">
+  <div class="page-header">
+    <div>
+      <h2>Configuración del Sistema</h2>
+      <p>Datos fiscales y parámetros generales</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Parámetros Económicos</h3>
+    
+    <div class="form-group">
+      <label>Tasa del día (BCV)</label>
+      <input id="tasaBCV" type="number" step="0.01" placeholder="Ej: 45.50">
+    </div>
+
+    <div class="form-group">
+      <label>IVA (%)</label>
+      <input id="iva" type="number" step="1" placeholder="Ej: 16">
+    </div>
+
+    <button class="btn btn-primary" onclick="guardarConfiguracion()">
+      Guardar Parámetros
+    </button>
+  </div>
+
+  <div class="panel">
+    <h3>Respaldo de Datos</h3>
+    <div class="flex gap-2">
+      <button class="btn btn-primary" onclick="exportarBackup()">
+        Exportar Backup
+      </button>
+      <input type="file" class="hidden" id="importInput" onchange="importarBackup(event)">
+      <button class="btn btn-primary" onclick="document.getElementById('importInput').click()">
+        Importar Backup
+      </button>
+    </div>
+  </div>
+</div>

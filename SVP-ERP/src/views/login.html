@@ -1,0 +1,34 @@
+<div class="login-screen flex items-center justify-center h-full bg-[#D4D0C8]">
+  <div class="login-card bg-[#EBE9ED] border-2 border-white border-b-[#808080] border-r-[#808080] p-8 w-96 shadow-xl">
+    <div class="text-center mb-6">
+      <h1 class="text-4xl font-black italic text-[#000080] tracking-tighter">SVP ERP</h1>
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Professional Management System</p>
+    </div>
+
+    <div class="space-y-4">
+      <div class="form-group">
+        <label class="text-[10px] font-black uppercase text-gray-600">Usuario:</label>
+        <input id="loginUser" type="text" class="w-full h-8 px-2 font-bold uppercase" placeholder="ADMIN">
+      </div>
+      <div class="form-group">
+        <label class="text-[10px] font-black uppercase text-gray-600">Contraseña:</label>
+        <input id="loginPass" type="password" class="w-full h-8 px-2" placeholder="••••">
+      </div>
+      <button onclick="intentarLogin()" class="w-full bg-[#000080] text-white py-3 font-black uppercase italic shadow-md hover:bg-blue-900 active:translate-y-0.5">
+        Ingresar al Sistema
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function intentarLogin() {
+    const u = document.getElementById("loginUser").value;
+    const p = document.getElementById("loginPass").value;
+    
+    // auth.js debe manejar la validación contra SQLite
+    if (typeof window.login === 'function') {
+      window.login(u, p);
+    }
+  }
+</script>

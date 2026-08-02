@@ -1,0 +1,4 @@
+SVP-ERP/node_modules/
+*.log
+.env
+.DS_Store

@@ -1,0 +1,69 @@
+
+<div class="panel h-full flex flex-col bg-[#EBE9ED] p-2 border-2 border-[#808080] shadow-inner">
+  <div class="border-b-2 border-[#000080] mb-4 pb-1 flex justify-between items-center">
+    <div>
+      <h2 class="text-xl font-black italic uppercase text-[#000080] leading-none">Configuración del Sistema</h2>
+      <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest mt-1">Primordialmente Local (SQLite) + Nube Opcional</p>
+    </div>
+    <div class="text-right">
+      <span class="text-[8px] font-bold text-gray-400 block uppercase">Estatus Híbrido:</span>
+      <span id="syncIndicator" class="text-[8px] font-black uppercase text-gray-500 italic">Solo Local</span>
+    </div>
+  </div>
+
+  <div class="flex-1 overflow-auto space-y-6 pr-2">
+    <!-- Parámetros Locales (Fuente Primaria) -->
+    <fieldset>
+      <legend>Parámetros Operativos Locales</legend>
+      <div class="grid grid-cols-2 gap-4 mt-2">
+        <div class="form-group">
+          <label class="text-[10px] font-black uppercase text-[#404040]">Tasa BCV del día:</label>
+          <input id="tasaBCV" type="number" step="0.01" class="w-full h-7 border border-gray-400 px-2 font-mono font-black text-blue-900 focus:bg-[#FFFACD]">
+        </div>
+        <div class="form-group">
+          <label class="text-[10px] font-black uppercase text-[#404040]">Porcentaje I.V.A. (%):</label>
+          <input id="iva" type="number" class="w-full h-7 border border-gray-400 px-2 font-mono font-black focus:bg-[#FFFACD]">
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Configuración Híbrida (Opcional) -->
+    <fieldset class="bg-blue-50/50 border-blue-300">
+      <legend class="text-blue-900">Sincronización en la Nube (Opcional)</legend>
+      <div class="p-2 space-y-4">
+        <div class="flex items-center gap-2 bg-white/50 p-2 border border-blue-200">
+          <input type="checkbox" id="syncEnabled" class="w-4 h-4 cursor-pointer" onchange="document.getElementById('cloudFields').classList.toggle('opacity-50', !this.checked)">
+          <label for="syncEnabled" class="text-[10px] font-black uppercase text-blue-900 cursor-pointer">Activar Modo Híbrido (Sincronizar Ventas y Almacén)</label>
+        </div>
+        
+        <div id="cloudFields" class="grid grid-cols-2 gap-4 transition-opacity">
+          <div class="form-group">
+            <label class="text-[9px] font-bold text-gray-500 uppercase">Dirección API Nube:</label>
+            <input id="syncApiUrl" placeholder="https://api.svperp.com/v1" class="w-full font-mono text-[10px] uppercase">
+          </div>
+          <div class="form-group">
+            <label class="text-[9px] font-bold text-gray-500 uppercase">Token de Seguridad:</label>
+            <input id="syncToken" type="password" placeholder="••••••••••••" class="w-full font-mono text-[10px]">
+          </div>
+        </div>
+        
+        <div class="flex gap-2">
+           <button onclick="SyncEngine.ejecutarSincronizacion()" class="bg-blue-700 text-white px-4 py-1.5 text-[9px] font-black uppercase italic border-b-2 border-black hover:bg-blue-900">
+             Probar Conexión Nube
+           </button>
+           <button class="bg-[#455a64] text-white px-4 py-1.5 text-[9px] font-black uppercase italic border-b-2 border-black hover:bg-gray-700">
+             Descargar Catálogo desde Nube
+           </button>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Botón Maestro Guardar -->
+    <div class="flex justify-end p-2">
+      <button class="win-tool-btn !h-10 !min-w-[180px] !flex-row !gap-2 hover:bg-white active:bg-gray-200" onclick="guardarConfiguracion()">
+        <span class="text-blue-700 text-lg">💾</span>
+        <span class="text-[10px] font-black italic">Guardar Cambios Locales</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,114 @@
+<div class="dashboard-screen">
+<div class="dashboard-header">
+<div>
+<h2>
+Dashboard General
+</h2>
+<p>
+Resumen del negocio en tiempo real
+</p>
+</div>
+<button class="btn btn-primary" onclick="cargarRuta('pos')">
++ Nueva Venta
+</button>
+</div>
+
+<div class="grid-cards">
+<div class="dashboard-card">
+<div class="card-icon">
+💰
+</div>
+<h3>
+Ventas del día
+</h3>
+<strong id="ventasDia">
+$0.00
+</strong>
+</div>
+
+<div class="dashboard-card">
+<div class="card-icon">
+📦
+</div>
+<h3>
+Productos
+</h3>
+<strong id="cantidadProductos">
+0
+</strong>
+</div>
+
+<div class="dashboard-card">
+<div class="card-icon">
+👥
+</div>
+<h3>
+Clientes
+</h3>
+<strong id="cantidadClientes">
+0
+</strong>
+</div>
+
+<div class="dashboard-card">
+<div class="card-icon">
+🏦
+</div>
+<h3>
+Caja Actual
+</h3>
+<strong id="cajaActual">
+$0.00
+</strong>
+</div>
+</div>
+
+<div class="dashboard-grid">
+<div class="panel">
+<div class="panel-header">
+<h3>
+Últimas Ventas
+</h3>
+<button class="btn btn-primary" onclick="cargarRuta('ventas')">
+Ver todas
+</button>
+</div>
+<table>
+<thead>
+<tr>
+<th>
+Fecha
+</th>
+<th>
+Total
+</th>
+</tr>
+</thead>
+<tbody id="ultimasVentas">
+</tbody>
+</table>
+</div>
+
+<div class="panel">
+<div class="panel-header">
+<h3>
+Productos con bajo stock
+</h3>
+</div>
+<table>
+<thead>
+<tr>
+<th>
+Producto
+</th>
+<th>
+Stock
+</th>
+</tr>
+</thead>
+<tbody id="stockBajo">
+</tbody>
+</table>
+</div>
+</div>
+</div>

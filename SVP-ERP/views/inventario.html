@@ -1,0 +1,203 @@
+<div class="inventory-screen">
+
+
+<div class="page-header">
+
+
+<div>
+
+<h2>
+Control de Inventario
+</h2>
+
+
+<p>
+Entradas, salidas y movimientos de mercancía
+</p>
+
+
+</div>
+
+
+
+<button class="btn btn-primary"
+onclick="registrarMovimiento()">
+
++ Movimiento
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="grid-cards">
+
+
+<div class="dashboard-card">
+
+<h3>
+Total Productos
+</h3>
+
+<strong id="totalProductosInv">
+0
+</strong>
+
+</div>
+
+
+
+
+<div class="dashboard-card">
+
+<h3>
+Stock Bajo
+</h3>
+
+<strong id="stockBajoInv">
+0
+</strong>
+
+</div>
+
+
+
+<div class="dashboard-card">
+
+<h3>
+Valor Inventario
+</h3>
+
+<strong id="valorInventario">
+$0.00
+</strong>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="panel">
+
+
+<h3>
+Existencia Actual
+</h3>
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Código
+</th>
+
+<th>
+Producto
+</th>
+
+<th>
+Stock
+</th>
+
+<th>
+Costo
+</th>
+
+<th>
+Valor
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="tablaInventario">
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="panel">
+
+
+<h3>
+Últimos Movimientos
+</h3>
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Fecha
+</th>
+
+<th>
+Producto
+</th>
+
+<th>
+Tipo
+</th>
+
+<th>
+Cantidad
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="tablaMovimientos">
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+</div>

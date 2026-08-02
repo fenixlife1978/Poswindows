@@ -1,0 +1,101 @@
+
+/* SVP ERP - Estructura y Navegación */
+
+#menu {
+  width: 240px;
+  background: #111827; /* Azul Petróleo Profundo */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #000;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+#contenido {
+  flex: 1;
+  background: #D4D0C8;
+  padding: 10px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Contenedor de Menú Lateral */
+.menu-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu-container h2 {
+  font-size: 22px;
+  font-weight: 900;
+  font-style: italic;
+  color: #38bdf8;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 15px;
+}
+
+.usuario-menu {
+  padding: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 11px;
+}
+
+.usuario-menu span {
+  display: block;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.usuario-menu strong {
+  color: white;
+}
+
+/* Botones del Menú */
+nav button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+nav button:hover {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+nav button.active {
+  background: #2563eb;
+  color: white;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn-logout {
+  margin-top: auto;
+  color: #f87171;
+  border: 1px solid rgba(248,113,113,0.2);
+}
+
+.btn-logout:hover {
+  background: rgba(220,38,38,0.2);
+  color: #fca5a5;
+}
